@@ -3,8 +3,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Builder;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.CreationTimestamp; // Using the Hibernate timestamps
+import org.hibernate.annotations.UpdateTimestamp;   // Using the Hibernate Update timestamps
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +19,7 @@ import java.sql.Timestamp;
 @Builder
 public class TodoItem 
 {
-	  // Autom. Index 
+	  // automatic index 
 	     @Id
 	    @GeneratedValue
 	    @Column(updatable = false, nullable = false)
@@ -28,13 +28,16 @@ public class TodoItem
 	    String title;
 	    @Column
 	    String description;
+	    
+	    // see: enumeration TODOSTATUS below
 	    @Column
 	    TodoStatus todoStatus;
 
 	    @CreationTimestamp
-	    @Column(updatable = false)
+	    @Column(updatable = false) // column dateCreated is not changeable from runtime
 	    Timestamp dateCreated;
-	    @UpdateTimestamp
+	    
+	    @UpdateTimestamp // lastModified date can be updated
 	    Timestamp lastModified;
 }
 
