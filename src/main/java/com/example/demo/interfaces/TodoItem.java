@@ -43,6 +43,17 @@ public class TodoItem
 	    @UpdateTimestamp // lastModified date can be updated
 	    Timestamp lastModified;
 
+		public TodoItem()
+		{}
+
+		public TodoItem(String title, String description, TodoStatus todoStatus) 
+		{
+			super();
+			this.title = title;
+			this.description = description;
+			this.todoStatus = todoStatus;
+		}
+
 		public Long getId() {
 			return id;
 		}
@@ -92,7 +103,4 @@ public class TodoItem
 		}
 }
 
-enum TodoStatus
-{	
-	OPENED,RUNNING,COMPLETED
-}
+
