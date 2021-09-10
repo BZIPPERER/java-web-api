@@ -43,8 +43,7 @@ public class TodoItem
 	    @UpdateTimestamp // lastModified date can be updated
 	    Timestamp lastModified;
 
-		public TodoItem()
-		{}
+		
 
 		public TodoItem(String title, String description, TodoStatus todoStatus) 
 		{

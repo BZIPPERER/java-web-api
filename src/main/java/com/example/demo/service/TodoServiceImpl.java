@@ -21,7 +21,8 @@ public class TodoServiceImpl implements TodoItemService
     }
 
     @Override
-    public List<TodoItem> getTodos() {
+    public List<TodoItem> getTodos() 
+    {
         List<TodoItem> todos = new ArrayList<>();
         todoRepository.findAll().forEach(todos::add);
         return todos;
@@ -34,7 +35,8 @@ public class TodoServiceImpl implements TodoItemService
     }
 //****
     @Override
-    public TodoItem insert(TodoItem todo) {
+    public TodoItem insert(TodoItem todo) 
+    {
         return todoRepository.save(todo);
     }
 

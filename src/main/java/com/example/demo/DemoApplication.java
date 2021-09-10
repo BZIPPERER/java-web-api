@@ -31,10 +31,7 @@ public class DemoApplication implements CommandLineRunner,TestUiInterface // imp
 	{
 		// test creation section
 		List<TodoItem> l = new ArrayList<TodoItem>();
-		l.add(new TodoItem());
-		l.add(new TodoItem());
-		l.add(new TodoItem());
-		l.add(new TodoItem());
+		 
 		boolean btest1=ListIsEmpty(l);
 		System.out.println("Ergebnis "+btest1);
 		loadTodos();
